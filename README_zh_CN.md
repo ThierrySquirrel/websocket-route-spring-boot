@@ -91,4 +91,4 @@ public class UserRoute implements WebsocketRelayTemplate {
 }
 ```
 
-![AmericanFlag](https://user-images.githubusercontent.com/49895274/184471180-88410937-f1e2-443d-a89e-c6e72296c4c7.jpeg)  
+![Russian flag](https://user-images.githubusercontent.com/49895274/190374082-70738873-8e92-42a0-8917-5007c2390b30.png)
