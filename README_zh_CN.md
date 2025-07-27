@@ -1,4 +1,4 @@
-# websocket-route-spring-boot-starter
+# websocket-route-spring-boot
 
 Websocket Route Spring Book Edition
 
@@ -11,7 +11,7 @@ Websocket Route Spring Book Edition
  使websocket群集更具可选性
  
 # Websocket 
- [websocket-spring-boot-starter](https://github.com/ThierrySquirrel/websocket-spring-boot-starter)   
+ [websocket-spring-boot](https://github.com/ThierrySquirrel/websocket-spring-boot)   
 
 ## Quick Start
 
@@ -19,8 +19,8 @@ Websocket Route Spring Book Edition
 <!--在pom.xml中添加依赖-->
         <dependency>
             <artifactId>websocket-route-spring-boot-starter</artifactId>
-            <groupId>com.github.thierrysquirrel</groupId>
-            <version>1.1.1.4-RELEASE</version>
+            <groupId>io.github.thierrysquirrel</groupId>
+            <version>1.2.0.0-RELEASE</version>
         </dependency>
 ``` 
 
@@ -46,7 +46,7 @@ websocket.route.relays[0].relay-bean-name=userRelay
 # 开始使用 WebsocketRoute
 ```java
 @Component
-public class UserRoute implements WebsocketRelayTemplate {
+public class UserRelay implements WebsocketRelayTemplate {
     public static List<String> websocketServerUrl=new ArrayList<> ();
     static {
         /**
