@@ -17,6 +17,7 @@ package io.github.thierrysquirrel.websocket.route.netty.client.init;
 
 import io.github.thierrysquirrel.websocket.route.core.exception.WebsocketRouteException;
 import io.github.thierrysquirrel.websocket.route.netty.client.core.constant.ClientConstant;
+import io.github.thierrysquirrel.websocket.route.netty.client.core.container.ClientContainer;
 import io.github.thierrysquirrel.websocket.route.netty.client.handler.HttpClientHandler;
 import io.github.thierrysquirrel.websocket.route.netty.client.handler.HttpClientInitChannelHandler;
 import io.github.thierrysquirrel.websocket.route.netty.core.factory.SocketAddressFactory;
@@ -54,7 +55,7 @@ public class WebsocketClientInit {
         HttpClientHandler httpClientHandler = new HttpClientHandler (serverChannel, handshake, readTimeoutMilli);
 
         try {
-            Channel clientChannel = new Bootstrap ().group (ClientConstant.CLIENT_EVENT_LOOP_GROUP)
+            Channel clientChannel = new Bootstrap ().group (ClientContainer.getEventLoopGroup(url))
                     .channel (NioSocketChannel.class)
                     .handler (new HttpClientInitChannelHandler (httpClientHandler))
                     .connect (SocketAddressFactory.getSocketAddress (url))

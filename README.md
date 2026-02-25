@@ -20,7 +20,7 @@ Support Function:
         <dependency>
             <artifactId>websocket-route-spring-boot-starter</artifactId>
             <groupId>io.github.thierrysquirrel</groupId>
-            <version>1.2.0.0-RELEASE</version>
+            <version>1.2.0.1-RELEASE</version>
         </dependency>
 ``` 
 

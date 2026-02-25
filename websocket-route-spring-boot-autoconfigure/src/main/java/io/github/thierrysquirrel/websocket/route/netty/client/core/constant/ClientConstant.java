@@ -15,8 +15,6 @@
  */
 package io.github.thierrysquirrel.websocket.route.netty.client.core.constant;
 
-import io.netty.channel.EventLoopGroup;
-import io.netty.channel.nio.NioEventLoopGroup;
 
 /**
  * ClassName: ClientConstant 
@@ -27,7 +25,6 @@ import io.netty.channel.nio.NioEventLoopGroup;
  * @since JDK 1.8
  */
 public final class ClientConstant {
-    public static final EventLoopGroup CLIENT_EVENT_LOOP_GROUP = new NioEventLoopGroup ();
     public static final int TIMEOUT = 16000;
 
     private ClientConstant() {

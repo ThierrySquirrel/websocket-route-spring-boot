@@ -19,7 +19,9 @@ import io.github.thierrysquirrel.websocket.route.netty.core.constant.IdleStateCo
 import io.github.thierrysquirrel.websocket.route.netty.core.factory.SocketAddressFactory;
 import io.github.thierrysquirrel.websocket.route.netty.server.handler.HttpServerInitChannelHandler;
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.channel.MultiThreadIoEventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.nio.NioIoHandler;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.Data;
 
@@ -44,7 +46,7 @@ public class WebsocketServerInit {
     }
 
     public void init() throws InterruptedException {
-        new ServerBootstrap ().group (new NioEventLoopGroup (), new NioEventLoopGroup ())
+        new ServerBootstrap ().group (new MultiThreadIoEventLoopGroup(NioIoHandler.newFactory()),new MultiThreadIoEventLoopGroup( NioIoHandler.newFactory()))
                 .channel (NioServerSocketChannel.class)
                 .childHandler (new HttpServerInitChannelHandler (IdleStateConstant.HTTP_READER_IDLE_TIME,
                         IdleStateConstant.HTTP_WRITER_IDLE_TIME,
