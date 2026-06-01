@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 the original author or authors.
+ * Copyright 2026/6/2 ThierrySquirrel
  * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,29 +12,23 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-package io.github.thierrysquirrel.websocket.route.autoconfigure;
-
-import lombok.Data;
+ **/
+package io.github.thierrysquirrel.websocket.route.netty.core.factory.constant;
 
 /**
- * ClassName: Relay
+ * ClassName: ThreadPoolConstant
  * Description:
- * date: 2020/8/18 3:48
+ * date: 2026/6/2
  *
  * @author ThierrySquirrel
- * @since JDK 1.8
+ * @since JDK 25
  */
-@Data
-public class Relay {
-    /**
-     * matchPathPrefix
-     * 匹配路径前缀
-     */
-    private String matchPathPrefix;
-    /**
-     * relayBeanName
-     * 转发be9an名称
-     */
-    private String relayBeanName;
+public final class ThreadPoolConstant {
+
+    public static final int WEBSOCKET_SERVER_BUSINESS_CORE_POOL_SIZE = Runtime.getRuntime().availableProcessors() * 2;
+
+    public static final int WEBSOCKET_SERVER_INIT_CORE_POOL_SIZE = 1;
+
+    private ThreadPoolConstant() {
+    }
 }
